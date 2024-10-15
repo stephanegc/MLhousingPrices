@@ -24,14 +24,15 @@ def prediction(file: UploadFile = File(...)):
     file.file.close()
 
     pp = preprocessor.load_preprocessor()
-    X_pred_preprocessed = pp.transform(X_pred)
+    pp.preprocess_test(X_pred)
 
     lr = model.load_model()
-    y_pred = lr.predict(X_pred_preprocessed)
-    X_pred_preprocessed['predictions'] = y_pred
+    y_pred = lr.predict(pp.X_test_pp)
+    predictions = pp.X_test_pp
+    predictions['predictions'] = y_pred
 
     stream = io.StringIO()
-    X_pred_preprocessed.to_csv(stream, index = False)
+    predictions.to_csv(stream, index = False)
     response = StreamingResponse(
         iter([stream.getvalue()]),
         media_type="text/csv"

@@ -8,13 +8,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
 import re
 
-def load_preprocessor(filename='MLhousingPrices/resources/preprocessor_02.pkl'):
+def load_preprocessor(filename='MLhousingPrices/resources/preprocessor_03.pkl'):
     pp = joblib.load(filename)
     return pp
 
 class Preprocessor():
-    def __init__(self, datapath, subset=True, cluster=False):
-        self.dataImport = pd.read_csv(datapath)
+    def __init__(self, data, subset=True, cluster=False):
+        self.dataImport = data
         
         if 'median_house_value' in self.dataImport.columns:
             self.y = self.dataImport.median_house_value

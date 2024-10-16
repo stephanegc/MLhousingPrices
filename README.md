@@ -4,10 +4,10 @@ This repository contains a package to analyse the California Housing Prices data
 It contains the code (**MLhousingPrices**) and notebooks (**MLhousingPrices/resources**) to run the code interactively.   
    
 To run the code in the notebooks, please clone this repository and install the packages listed in the **requirements.txt** file, via :   
-**pip install -r ./requirements.txt** (within a terminal with this gitrepo a the working directory, containing a virtual environment)
+**pip install -r ./requirements.txt** (within a terminal with this gitrepo as the working directory, containing a virtual environment)
    
 The package itself can be installed via :    
-**pip install ./dist/mlhousingprices-3.0.0.tar.gz**  (within a terminal with this gitrepo a the working directory, containing a virtual environment)
+**pip install ./dist/mlhousingprices-3.0.0.tar.gz**  (within a terminal with this gitrepo as the working directory, containing a virtual environment)
 
 ## Code
 * **MLhousingPrices/preprocessor.py** contains the code to preprocess the data.
